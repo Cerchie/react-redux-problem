@@ -1,5 +1,5 @@
 const DEFAULT_STATE = {
-    todos: []
+   todos: []
   };
   
   function rootReducer(state = DEFAULT_STATE, action) {
@@ -7,7 +7,7 @@ const DEFAULT_STATE = {
       return {
         ...state,
         todos: [
-          ...state.todos, { ...action.todos }
+          ...state.todos, { ...action.todo }
         ]
       };
     }
@@ -19,6 +19,8 @@ const DEFAULT_STATE = {
       };
     }
     return state;
+
+
   }
-  
+ 
   export default rootReducer;

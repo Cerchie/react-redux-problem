@@ -11,11 +11,15 @@ function NewTodoForm({ addTodo }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    addTodo({ ...form, id: uuidv4() });
-    setForm(DEFAULT_FORM);
+    console.log(addTodo)
+    const todos = addTodo({ ...form, id: uuidv4() });
+
+   setForm('DATAFROMNTF');
+   
   }
 
   function handleChange(e) {
+    e.preventDefault();
     const { name, value } = e.target;
     setForm(f => ({ ...f, [name]: value }));
   }
@@ -32,7 +36,7 @@ function NewTodoForm({ addTodo }) {
           onChange={handleChange}
           value={form.text}
         />
-        <button onClick>
+        <button>
           Add Todo!
         </button>
       </form>
